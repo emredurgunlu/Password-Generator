@@ -1,0 +1,48 @@
+:root {
+  --bgColor-1: #7d6634;
+  --bgColor-2: #3d433f;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./img/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.container {
+  background-color: var(--bgColor-1);
+  padding: 10px 20px;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  border-radius: 20px;
+}
+#password {
+  font-size: 30px;
+}
+#myBtn {
+  background-color: var(--bgColor-2);
+  padding: 10px 20px;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+}
+#copy img {
+  height: 50px;
+  &:hover {
+    cursor: pointer;
+  }
+}
