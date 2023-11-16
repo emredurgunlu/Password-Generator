@@ -1,6 +1,13 @@
+const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const lowerCase = upperCase.toLowerCase();
+const numbers = "0123456789";
+const symbols = "!@#$%^&*()_+~|}{[]:;?><,./-=";
+const allChars = upperCase + lowerCase + numbers + symbols;
+
+const passwordValue = document.getElementById("password");
+
 const createPassword = () => {
   let = password = "";
-  //   password += numbers[Math.floor(Math.random() * numbers.length)];
   password += numbers[getRandomNumber(numbers.length)];
   password += numbers[getRandomNumber(numbers.length)];
   password += numbers[getRandomNumber(numbers.length)];
@@ -13,6 +20,7 @@ const createPassword = () => {
   password += allChars[getRandomNumber(allChars.length)];
   console.log("before shuffling Password is:\n", password);
   passwordValue.innerText = shufflePassword(password);
+  // passwordValue.innerText = password.split('').sort(function(){return 0.5-Math.random()}).join(''); // alternate way to shuffle
 };
 
 const getRandomNumber = (max) => {
@@ -30,21 +38,12 @@ const shufflePassword = (text) => {
   return parts.join("");
 };
 
-const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const lowerCase = upperCase.toLowerCase();
-console.log(lowerCase);
-const numbers = "0123456789";
-const symbols = "!@#$%^&*()_+~|}{[]:;?><,./-=";
-const allChars = upperCase + lowerCase + numbers + symbols;
-
-const passwordValue = document.getElementById("password");
-
-const btnEvent = document.getElementById("myBtn");
-btnEvent.addEventListener("click", createPassword);
-
 const copyPassword = () => {
   navigator.clipboard.writeText(passwordValue.innerText);
 };
+
+const btnEvent = document.getElementById("myBtn");
+btnEvent.addEventListener("click", createPassword);
 
 const copyEvent = document.getElementById("copy");
 copyEvent.addEventListener("click", copyPassword);
